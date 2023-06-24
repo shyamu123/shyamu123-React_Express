@@ -18,14 +18,16 @@ import App from './App';
 // import Tasklist4 from './Tasklist4';
 // import Datahook from './Datahook';
 // import FilterData from './FilterData'; 
-import Hook from './Hook';
+// import Hook from './Hook';
 // import  from '';
+// import Form from './Componets/Form Data/Form';
+import Form1 from './Componets/Form Data/Form1';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Hook />
     <App />
+    <Form1 />
   </React.StrictMode>
 );
 
