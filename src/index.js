@@ -9,6 +9,7 @@ import './index.css';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 // import App from './App';
+
 // import Main from './Componets/Form Data/Expances/Main';
 
 // import Booklist from './Booklist';
@@ -42,11 +43,17 @@ import reportWebVitals from './reportWebVitals';
 // import Taskmemo from './Componets/UseMemo/Taskmemo'
 // import Callback from './Componets/UseCallback/Callback';
 // import Task1 from './Componets/Taskprops/Task1'
-import Router from './Componets/Router/Router';
+// import Router from './Componets/Router/Router';
+// import Custom from './Componets/UsecustomHook/Custom';
+// import ReduxHook from './Componets/UseRedux/ReduxHook';
+// import Shyamu from './Componets/UseEffect/shyamu';
+import Apps from './Apps';
+// import Apps1 from './Apps1';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router/>
+  <Apps />
   </React.StrictMode>
 );
 
