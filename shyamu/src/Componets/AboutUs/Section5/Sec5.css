@@ -1,0 +1,4 @@
+.text{
+    border-style: solid;
+    border-image: linear-gradient(to right, black, white) 1;
+  }
