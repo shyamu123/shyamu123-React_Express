@@ -5,6 +5,7 @@ import aset_22 from "../../../assets/aboutus/asset22.jpeg"
 const Sec1 = () => {
   return (
     <>
+    <br></br><br></br>
     <div className='h-[580px] w-full iphone relative' style={{backgroundImage: `url(${aset_22})`, backgroundSize:"cover"}}>
     <div className='ovelay absolute'></div><br/>
     <div className='mt-[220px]'>
