@@ -1,7 +1,8 @@
-import { ADD_TO_CART , REMOVE_TO_CART , EMPTY_CART } from  './constant';
+import {ADD_TO_CART , REMOVE_TO_CART , EMPTY_CART} from './Constant';
 
-export const addToCart=(data)=>{
-    console.warn("action called",data);
+
+export const addToCart = (data) => {
+    console.log("action called",data);
     return{
         type:ADD_TO_CART,
         data

@@ -1,6 +1,7 @@
-import {ADD_TO_CART ,REMOVE_TO_CART , EMPTY_CART} from './constant'
+import { ADD_TO_CART, EMPTY_CART } from "./Constant";
+import {REMOVE_TO_CART} from "./Constant";
 
-const cartData=(data=[],action)=>{
+const cartData = (data = [],action) => {
     switch (action.type){
         case ADD_TO_CART:
             console.log("ADD_TO_CART",action);
