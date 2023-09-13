@@ -26,11 +26,15 @@ import Shop from './Componets/Shop/Shop';
 import Toprated from './Componets/Homepege/Section3/Toprated';
 import Bestselling from './Componets/Homepege/Section3/Bestselling';
 import Latestprduct from './Componets/Homepege/Section3/Latestprduct';
+import { Provider } from 'react-redux';
+import store from './Componets/ReactSaga/Store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <Provider store={store}>
+
   <BrowserRouter>
-    <Navbar/> 
+  <Navbar/> 
       <Routes>
         <Route path="/" element={<Homepege/>}>
           <Route path="/" element={<Toprated/>}></Route>
@@ -55,5 +59,6 @@ root.render(
       </Routes>
     <Fotter/> 
   </BrowserRouter>
+  </Provider>
 
 );
