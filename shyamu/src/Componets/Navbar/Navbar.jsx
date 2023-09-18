@@ -7,8 +7,16 @@ import aset_90 from "../../assets/asset90.svg"
 import aset_91 from "../../assets/asset91.svg"
 import aset_92 from "../../assets/asset 92.svg"
 import aset_93 from "../../assets/asset 93.svg"
-
 import { useSelector } from 'react-redux';
+import {
+  Offcanvas,
+  Ripple,
+  Dropdown,
+  initTE,
+} from "tw-elements";
+initTE({ Offcanvas, Ripple, Dropdown });
+
+
 const Navbar = () => {
   let Data = useSelector((state => state.cartData))
     return (
@@ -62,6 +70,15 @@ const Navbar = () => {
                         style={{ fontFamily: "sans-serif" }} to="/Contactus">Contact us</Link>
                     </div>
                   </div>
+
+                
+
+
+
+
+
+
+
                   <div className="flex gap-6">
                     <a href="#">
                       <img src={aset_90} alt="Not Show"/>
@@ -71,18 +88,72 @@ const Navbar = () => {
                     </Link>
                     <Link to='/NavMywishlist'>
                       <img src={aset_92} alt="Not Show"/>
-                      <p className='h-[18px] w-[18px] absolute ms-[11px] mt-[-25px]  text-center bg-red-400  rounded-full z-20'>1</p>
+                      <p className='h-[18px] w-[18px] absolute ms-[11px] mt-[-25px]  text-center bg-red-400  rounded-full z-20'>0</p>
                     </Link>
-                    <a href="#">
-                      <img src={aset_93} alt="Not Show"/>
+
+
+                    <a>
+                    <img
+                    className="mr-1.5 inline-block rounded text-xs font-medium uppercase leading-normal text-white"
+                    type="button"
+                    data-te-offcanvas-toggle=""
+                    data-te-target="#offcanvasRight"
+                    aria-controls="offcanvasRight"
+                    data-te-ripple-init=""
+                    data-te-ripple-color="light"
+                    src={aset_93} alt="Not Show"/>
+        
+                    <div
+                        className="invisible fixed bottom-0 right-0 top-0 z-[1045] flex w-96 max-w-full translate-x-full flex-col border-none bg-white bg-clip-padding text-neutral-700 shadow-sm outline-none transition duration-300 ease-in-out dark:bg-neutral-800 dark:text-neutral-200 [&[data-te-offcanvas-show]]:transform-none"
+                        tabIndex={-1}
+                        id="offcanvasRight"
+                        aria-labelledby="offcanvasRightLabel"
+                        data-te-offcanvas-init=""
+                    >
+                        <div className="flex items-center justify-between p-4 bg-yellow-300">
+                            <h5
+                                className="mb-0 font-semibold leading-normal"
+                                id="offcanvasRightLabel"
+                            >
+                              SHOPPING CART
+                            </h5>
+                            <button
+                                type="button"
+                                className="box-content rounded-none border-none opacity-50 hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+                                data-te-offcanvas-dismiss=""
+                            >
+                                <span className="w-[1em] focus:opacity-100 disabled:pointer-events-none disabled:select-none disabled:opacity-25 [&.disabled]:pointer-events-none [&.disabled]:select-none [&.disabled]:opacity-25">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        strokeWidth="1.5"
+                                        stroke="currentColor"
+                                        className="h-6 w-6"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M6 18L18 6M6 6l12 12"
+                                        />
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+                        <div className="offcanvas-body flex-grow overflow-y-auto p-4">...</div>
+                    </div>
+
                       <p className='h-[18px] w-[18px] absolute ms-[11px] mt-[-25px]  text-center bg-red-400  rounded-full z-20'>{Data.length}</p>
                     </a>
                   </div>
+                  
                 </ul>
               </nav>
             </header>
           </div>
         </div>
+
+        
       </>
     )
 }

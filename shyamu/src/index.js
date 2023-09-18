@@ -56,6 +56,7 @@ root.render(
         <Route path="/Error" element={<Error/>}></Route>
         <Route path="/Navlogin" element={<Navlogin/>}></Route>
         <Route path="/NavMywishlist" element={<NavMywishlist/>}></Route>
+        <Route path="/MyCart" element={<MyCart/>}></Route>
       </Routes>
     <Fotter/> 
   </BrowserRouter>
