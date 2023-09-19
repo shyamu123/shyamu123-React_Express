@@ -1,4 +1,8 @@
 export let ADD_TO_CART = 'ADD_TO_CART';
 export let REMOVE_TO_CART = 'REMOVE_TO_CART';
+export let ADD_TO_WISH = 'ADD_TO_WISH';
+export let REMOVE_TO_WISH = 'REMOVE_TO_WISH';
 export let PRODUCT_LIST = 'PRODUCT_LIST';
 export let SET_PRODUCT_LIST = 'SET_PRODUCT_LIST';
+export let INCRIMENT_QUT = 'INCRIMENT_QUT';
+export let DECRIMENT_QUT = 'DECRIMENT_QUT';

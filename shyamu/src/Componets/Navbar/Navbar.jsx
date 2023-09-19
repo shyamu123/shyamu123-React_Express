@@ -19,6 +19,7 @@ initTE({ Offcanvas, Ripple, Dropdown });
 
 const Navbar = () => {
   let Data = useSelector((state => state.cartData))
+  let WishData = useSelector((state => state.whishData))
     return (
         <>
         <div className="bg-[#f0f2ee] h-[80px]  border-[1px] border-gray-300  border-t-0 border-r-0 border-l-0 navbar">
@@ -86,9 +87,9 @@ const Navbar = () => {
                     <Link to='/Navlogin'>
                       <img src={aset_91} alt="Not Show"/>
                     </Link>
-                    <Link to='/NavMywishlist'>
+                    <Link to='/Mywishlist'>
                       <img src={aset_92} alt="Not Show"/>
-                      <p className='h-[18px] w-[18px] absolute ms-[11px] mt-[-25px]  text-center bg-red-400  rounded-full z-20'>0</p>
+                      <p className='h-[18px] w-[18px] absolute ms-[11px] mt-[-25px]  text-center bg-red-400  rounded-full z-20'>{WishData.length}</p>
                     </Link>
 
 

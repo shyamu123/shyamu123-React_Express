@@ -1,80 +1,56 @@
-import React from 'react'
-
-import product_21 from "../../../assets/product-21.jpg"
-import product_20 from "../../../assets/product-20.jpg"
-import product_25 from "../../../assets/product-25.jpg"
-import product_23 from "../../../assets/product-23.jpg"
-import product_26 from "../../../assets/product-26.jpg"
-import product_24 from "../../../assets/product-24.jpg"
-import product_22 from "../../../assets/product-22.jpg"
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { productList } from '../../ReactSaga/Product/Productlist';
+import { addToCart } from '../../ReactSaga/Action';
 
 const Latestprduct = () => {
+  let dispatch = useDispatch();
+    let data = useSelector((state)=> state.productData)
+  
+    useEffect(()=>{
+        dispatch(productList())
+    },[])
+
   return (
     <>
-    <div className="containerrr">
-    
-    <div className="flex justify-between mt-[30px]">
-      <div className>
-        <div className="over h-[300px] bg-[#f6f8fa] w-[270px]" >
-            <a href="#"><img src={product_21} alt="" className="ss m-auto" /></a>
-        </div>
-        <p className="text-[15px] mt-2">Buy Guild Planer - 900w</p>
-        <p className="text-gray-700 mt-1">$239.00</p>
-      </div>
-      <div className>
-        <div className="over h-[300px] bg-[#f6f8fa] w-[270px]">
-            <a href="#">
-                <img src={product_20} alt="" className="ss m-auto" />
-            </a>
-        </div>
-        <p className="text-[15px] mt-2">Apple Watch Series 8</p>
-        <p className="text-gray-700 mt-1">$188.00</p>
-      </div>
-      <div className>
-        <div className="over h-[300px] bg-[#f6f8fa] w-[270px]">
-            <a href="#" />
-            <img src={product_25} alt="" className="ss m-auto" />
-        </div>
-        <p className="text-[15px] mt-2">TECLAST Tablet Protective Cover Case</p>
-        <p className="text-gray-700 mt-1"><del className="me-1">$899.00</del>$791.12</p>
-      </div>
-      <div className>
-        <div className="over h-[300px] bg-[#f6f8fa] w-[270px]">
-            <a href="#" />
-            <img src={product_23} alt="" className="ss m-auto" />
-        </div>
-        <p className="text-[15px] mt-2">Bluefin Fitness Unisex Adult Tour</p>
-        <p className="text-gray-700 mt-1">$996.00</p>
-    </div>
-  </div>
+    <div className='containerrr flex flex-wrap mx-auto gap-x-[26px] '>
+    {
+        data.filter((el) => {return el.type === 'latest product'}).map(topratedd => {
+            return (
+                <div class="one  inline-block w-[260px] ">
+                    <div class="card h-[300px] ">
+                        <img src={topratedd.image} alt="Not Show" class="ss cursor-pointer " style={{ height: "300px" }} />
+                        <div class="info">
+                        <div class="one1 hover:bg-[#f50963] group">
+                        <a href='#'>
+                            <i class="fa-regular fa-heart text-[20px] ms-2 mt-2 group-hover:text-white"></i>
 
-  <div className="flex mt-[30px]">
-      <div className>
-        <div className="over h-[300px] bg-[#f6f8fa] w-[270px]" >
-            <a href="#"><img src={product_26} alt="" className="ss m-auto" /></a>
-        </div>
-        <p className="text-[15px] mt-2">Buy Guild Planer - 900w</p>
-        <p className="text-gray-700 mt-1">$239.00</p>
-      </div>
-      <div className="ms-[15px]">
-        <div className="over h-[300px] bg-[#f6f8fa] w-[270px]">
-            <a href="#">
-                <img src={product_24} alt="" className="ss m-auto" />
-            </a>
-        </div>
-        <p className="text-[15px] mt-2">Apple Watch Series 8</p>
-        <p className="text-gray-700 mt-1">$188.00</p>
-      </div>
-      <div className="ms-[15px]">
-        <div className="over h-[300px] bg-[#f6f8fa] w-[270px]">
-            <a href="#" />
-            <img src={product_22} alt="" className="ss m-auto" />
-        </div>
-        <p className="text-[15px] mt-2">TECLAST Tablet Protective Cover Case</p>
-        <p className="text-gray-700 mt-1"><del className="me-1">$899.00</del>$791.12</p>
-      </div>
-  </div>
-  </div>  
+                        </a>
+                    </div>
+                    <div class="one2 hover:bg-[#f50963] group">
+                        <a href='#'>
+                            <i class="fa-regular fa-eye text-[20px] ms-2 mt-2 group-hover:text-white"></i>
+
+                        </a>
+                    </div>
+                    <div class="one3 hover:bg-[#f50963] group">
+                        <a href='#'>
+                            <i class="fa-solid fa-link text-[20px] ms-2 mt-2 group-hover:text-white"></i>
+
+                        </a>
+                    </div>
+                        </div>
+                        <div class="info1">
+                            <button  onClick={()=>dispatch(addToCart(topratedd))}  class="w-[255px] h-[35px] bg-black text-white mt-[83px] ml-[-250px] hover:bg-[#f50963]">ADD TO CART</button>
+                        </div>
+                    </div>
+                    <p className="text-[15px] mt-2">{topratedd.Name}</p>
+                    <p className="text-gray-700 mt-1"><del>{topratedd.Price1}</del>{topratedd.Price}</p>
+                </div>
+            )
+        })
+    }
+</div>
     </>
   )
 }
